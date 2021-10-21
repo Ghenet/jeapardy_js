@@ -9,6 +9,9 @@ body {
     align-items: center;
     flex-direction: column;
 }
+#game {
+    display: flex;
+}
 
 .genre-column {
     display: flex;
