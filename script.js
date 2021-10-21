@@ -13,6 +13,11 @@ function addGenre() {
 
     //lets make a call to the api for each level
     levels.forEach((level) => {
+        //add a card element
+        const card = document.createElement('div');
+        card.classList.add('card');
+        column.append(card);
+
         fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=${level}&type=boolean`)
             .then(res => responce.json())
             .then(data => console.log(data));
