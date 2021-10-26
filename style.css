@@ -32,9 +32,12 @@ body {
 
 .correct-answer {
     background-color: #05b529;
+    /* font-size: 80px;
+    text-align: center; */
 }
 
 .wrong-answer {
     background-color: #db0000;
-
+    /* font-size: 80px;
+    text-align: center; */
 }
