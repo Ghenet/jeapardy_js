@@ -93,5 +93,13 @@ function getResult() {
             }
             cardOfButton.innerHTML = cardOfButton.getAttribute('data-value');
         }, 100);
+    }else {
+        cardOfButton.classList.add('wrong-answer');
+        setTimeout(()=> {
+            while(cardOfButton.firstChild){
+                cardOfButton.removeChild(cardOfButton.firstChild);
+            }
+            cardOfButton.innerHTML = 0; 
+        },100)
     }
 }
