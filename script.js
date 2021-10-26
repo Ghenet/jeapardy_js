@@ -55,9 +55,20 @@ function addGenre(genre) {
                 card.setAttribute('data-answer', data.results[0].correct_answer);//adds data-answer attribute to the card which is set to the correct answer
                 card.setAttribute('data-value', card.getInnerHTML());// sets the data-value attribute the value of points in each card level
             });
-
+            card.addEventListener('click', flipCard);
     })
 }
 
 
 genres.forEach(genre => addGenre(genre)); //loops over all the 4 genres to create 4 cols
+
+function flipCard() {
+    console.log('clicked');
+    const textDisplay = document.createElement('div');
+    const trueButton = document.createElement('button');
+    const falseButton = document.createElement('button');
+    trueButton.innerHTML = 'True';
+    falseButton.innerHTML = 'False';
+    textDisplay.innerHTML = this.getAttribute('data-question');
+    this.append(textDisplay, trueButton, falseButton);
+}
