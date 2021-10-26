@@ -1,7 +1,7 @@
 //lets's get the html elements
 const game = document.getElementById('game');
 const scoreDisplay = document.getElementById('score');
-const let = 0;
+let score = 0;
 
 const genres = [
     {
@@ -85,5 +85,6 @@ function getResult() {
     if(cardOfButton.getAttribute('data-answer') === this.innerHTML) {
         score=score + parseInt(cardOfButton.getAttribute('data-value'));
         scoreDisplay.innerHTML = score;
+        cardOfButton.classList.add('correct-answer');
     }
 }
