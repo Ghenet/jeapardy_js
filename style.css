@@ -31,5 +31,10 @@ body {
 }
 
 .correct-answer {
-    background-color: #0fff7fbe;
+    background-color: #05b529;
+}
+
+.wrong-answer {
+    background-color: #db0000;
+
 }
