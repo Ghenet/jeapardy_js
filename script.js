@@ -73,4 +73,8 @@ function flipCard() {
     falseButton.addEventListener('click', getResult);
     textDisplay.innerHTML = this.getAttribute('data-question');
     this.append(textDisplay, trueButton, falseButton);
+
+    // remove the eventListener so that we can only flip one card at a time
+    const allCards = Array.from(document.querySelectorAll('.card'));
+    allCards.forEach(card => card.removeEventListener('click', flipCard));
 }
