@@ -55,8 +55,8 @@ function addGenre(genre) {
                 card.setAttribute('data-question', data.results[0].question);//adds data-question attribute to the card which is set to the question attribute
                 card.setAttribute('data-answer', data.results[0].correct_answer);//adds data-answer attribute to the card which is set to the correct answer
                 card.setAttribute('data-value', card.getInnerHTML());// sets the data-value attribute the value of points in each card level
-            });
-            card.addEventListener('click', flipCard);
+            })
+           .then(done =>  card.addEventListener('click', flipCard)); //adds eventlistner once all the data is fetched in the previous then
     })
 }
 
