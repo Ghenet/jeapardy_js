@@ -81,6 +81,10 @@ function flipCard() {
 }
 
 function getResult() {
+    // add the eventListener back on after answer is clicked
+    const allCards = Array.from(document.querySelectorAll('.card'));
+    allCards.forEach(card => card.addEventListener('click', flipCard));
+
     const cardOfButton = this.parentElement;
     if(cardOfButton.getAttribute('data-answer') === this.innerHTML) {
         score=score + parseInt(cardOfButton.getAttribute('data-value'));
@@ -102,4 +106,5 @@ function getResult() {
             cardOfButton.innerHTML = 0; 
         },100)
     }
+    cardOfButton.removeEventListener('click', flipCard);
 }
