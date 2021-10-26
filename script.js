@@ -86,5 +86,12 @@ function getResult() {
         score=score + parseInt(cardOfButton.getAttribute('data-value'));
         scoreDisplay.innerHTML = score;
         cardOfButton.classList.add('correct-answer');
+// removes each child element after clicking T/F so that the card is flipped back to points won on that card
+        setTimeout(() => {
+            while(cardOfButton.firstChild){
+                cardOfButton.removeChild(cardOfButton.firstChild);
+            }
+            cardOfButton.innerHTML = cardOfButton.getAttribute('data-value');
+        }, 100);
     }
 }
