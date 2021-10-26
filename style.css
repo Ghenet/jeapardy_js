@@ -29,3 +29,7 @@ body {
     margin: 10px;
 
 }
+
+.correct-answer {
+    background-color: #0fff7fbe;
+}
