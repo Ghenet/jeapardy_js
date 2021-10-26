@@ -1,6 +1,7 @@
 //lets's get the html elements
 const game = document.getElementById('game');
 const scoreDisplay = document.getElementById('score');
+const let = 0;
 
 const genres = [
     {
@@ -77,4 +78,12 @@ function flipCard() {
     // remove the eventListener so that we can only flip one card at a time
     const allCards = Array.from(document.querySelectorAll('.card'));
     allCards.forEach(card => card.removeEventListener('click', flipCard));
+}
+
+function getResult() {
+    const cardOfButton = this.parentElement;
+    if(cardOfButton.getAttribute('data-answer') === this.innerHTML) {
+        score=score + parseInt(cardOfButton.getAttribute('data-value'));
+        scoreDisplay.innerHTML = score;
+    }
 }
