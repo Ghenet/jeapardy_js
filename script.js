@@ -69,6 +69,8 @@ function flipCard() {
     const falseButton = document.createElement('button');
     trueButton.innerHTML = 'True';
     falseButton.innerHTML = 'False';
+    trueButton.addEventListener('click',getResult);
+    falseButton.addEventListener('click', getResult);
     textDisplay.innerHTML = this.getAttribute('data-question');
     this.append(textDisplay, trueButton, falseButton);
 }
